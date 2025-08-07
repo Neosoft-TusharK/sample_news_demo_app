@@ -17,7 +17,7 @@ class NewsRemoteDataSourceImpl implements NewsRemoteDataSource {
   }) async {
     print("Api request: page=$page, query=$query");
     final response = await dio.get(
-      'https://newsdata.io/api/1/latest?apikey=pub_09f906ed951a4b08a78f078d11dfff86',
+      'https://newsdata.io/api/1/latest?apikey=pub_1a6250e0999f4cd58b9eeaeb0940ad85',
       queryParameters: {
         if (page != null) 'page': page,
         if (query != null && query.isNotEmpty) 'q': query,
