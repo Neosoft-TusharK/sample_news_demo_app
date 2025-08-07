@@ -32,54 +32,56 @@ class NewsDetailsScreen extends ConsumerWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (news.imageUrl != null)
-              Image.network(
-                news.imageUrl!,
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return SizedBox(
-                    height: 200,
-                    child: Center(child: CircularProgressIndicator()),
-                  );
-                },
-                errorBuilder: (context, error, stackTrace) {
-                  return SizedBox(
-                    height: 200,
-                    child: Center(
-                      child: Icon(
-                        Icons.broken_image,
-                        size: 60,
-                        color: Colors.grey,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (news.imageUrl != null)
+                Image.network(
+                  news.imageUrl!,
+                  height: 200,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return SizedBox(
+                      height: 200,
+                      child: Center(child: CircularProgressIndicator()),
+                    );
+                  },
+                  errorBuilder: (context, error, stackTrace) {
+                    return SizedBox(
+                      height: 200,
+                      child: Center(
+                        child: Icon(
+                          Icons.broken_image,
+                          size: 60,
+                          color: Colors.grey,
+                        ),
                       ),
+                    );
+                  },
+                )
+              else
+                SizedBox(
+                  height: 200,
+                  child: Center(
+                    child: Icon(
+                      Icons.image_not_supported,
+                      size: 60,
+                      color: Colors.grey,
                     ),
-                  );
-                },
-              )
-            else
-              SizedBox(
-                height: 200,
-                child: Center(
-                  child: Icon(
-                    Icons.image_not_supported,
-                    size: 60,
-                    color: Colors.grey,
                   ),
                 ),
-              ),
 
-            const SizedBox(height: 16),
-            Text(news.title),
-            const SizedBox(height: 10),
-            Text(news.description ?? ''),
-            const SizedBox(height: 10),
-            Text('Published: ${news.pubDate}'),
-          ],
+              const SizedBox(height: 16),
+              Text(news.title),
+              const SizedBox(height: 10),
+              Text(news.description ?? ''),
+              const SizedBox(height: 10),
+              Text('Published: ${news.pubDate}'),
+            ],
+          ),
         ),
       ),
     );
