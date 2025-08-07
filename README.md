@@ -1,17 +1,24 @@
-# news_demo_app
+# 📰 Flutter News App with Wishlist, Search, Pagination & Firebase Auth
 
-A new Flutter project.
+A clean architecture Flutter app that lists news from a public API with powerful features like:
 
-## Getting Started
+- 🔥 Firebase Authentication (Login/Register)
+- 🧾 News listing with pagination & search
+- 💖 Wishlist with local caching (Hive)
+- 🌐 Internet connectivity awareness
+- 🔁 Pull to refresh
+- 🎯 Riverpod for state management
+- 💡 Clean architecture (Data → Domain → Presentation)
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📸 Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| News List | News Detail | Wishlist |
+|----------|-------------|----------|
+| ![News](screenshots/news.png) | ![Detail](screenshots/detail.png) | ![Wishlist](screenshots/wishlist.png) |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# sample_news_demo_app
+---
+
+## 🧱 Architecture
+
