@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "829018541506",
+    "project_id": "news-demo-app-29f4c",
+    "storage_bucket": "news-demo-app-29f4c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829018541506:android:b5bbf9f0a8b6e6bdef5a5b",
+        "android_client_info": {
+          "package_name": "com.example.news_demo_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZT3k8up8p8-1fqkbZ4B5pSF9d5Ury7Pg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
