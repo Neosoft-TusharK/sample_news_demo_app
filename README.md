@@ -20,5 +20,3 @@ A clean architecture Flutter app that lists news from a public API with powerful
 
 ---
 
-## 🧱 Architecture
-
