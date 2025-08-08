@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_demo_app/core/services/secure_storage_service.dart';
 import 'package:news_demo_app/di/login_usecase_provider.dart';
+import 'package:news_demo_app/di/secure_storage_service_provider.dart';
 import 'package:news_demo_app/features/auth/presentation/screens/register_screen.dart';
 import 'package:news_demo_app/features/news/presentation/screens/news_home_screen.dart';
 import '../providers/auth_provider.dart';
@@ -37,6 +39,14 @@ class LoginScreen extends ConsumerWidget {
                       .read(loginUsecaseProvider)
                       .call(emailController.text, passwordController.text);
                   ref.read(authUserProvider.notifier).state = user;
+                  // After user login success
+                  // TODO: This should call our backend securely to get the API key after login
+                  final keyFromServer =
+                      'pub_1a6250e0999f4cd58b9eeaeb0940ad85'; // Example key
+                  await ref
+                      .watch(secureStorageServiceProvider)
+                      .saveApiKey(keyFromServer);
+
                   if (context.mounted) {
                     Navigator.pushReplacement(
                       context,
